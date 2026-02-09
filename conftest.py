@@ -2,6 +2,9 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
+from utils import attach
+
+
 @pytest.fixture(scope='function')
 def setup_browser():
     options = Options()
@@ -14,3 +17,5 @@ def setup_browser():
     # driver = webdriver.Chrome(options=options)
 
     yield driver
+
+    attach.add_screenshot(driver)

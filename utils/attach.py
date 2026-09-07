@@ -17,7 +17,7 @@ def add_page_source(driver):
     allure.attach(html, 'page_source', AttachmentType.HTML, '.html')
 
 def add_video(driver):
-    video_url = "https://selenoid.autotests.cloud/video/" + driver.session_id + ".mp4"
+    video_url = "https://selenoid.qa.guru/video/" + driver.session_id + ".mp4"
     html = "<html><body><video width='100%' height='100%' controls autoplay><source src='" \
            + video_url \
            + "' type='video/mp4'></video></body></html>"

@@ -15,8 +15,8 @@ def test_successful(setup_browser):
         driver.get("https://demoqa.com/automation-practice-form")
         wrapper = driver.find_element(By.CSS_SELECTOR, ".practice-form-wrapper")
         assert "Student Registration Form" in wrapper.text
-        driver.execute_script("$('footer').remove()")
-        driver.execute_script("$('#fixedban').remove()")
+        driver.execute_script("document.querySelectorAll('footer').forEach(el => el.remove())")
+        driver.execute_script("document.getElementById('fixedban')?.remove()")
         # Remove any modal/overlay that might block clicks (e.g. ads, cookie banner)
         driver.execute_script("document.querySelectorAll('.modal.show, [role=dialog]').forEach(el => el.remove());")
 

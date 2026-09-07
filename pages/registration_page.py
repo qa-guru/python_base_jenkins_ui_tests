@@ -33,8 +33,8 @@ class RegistrationPage:
         self.driver.get(self.URL)
         wrapper = self.driver.find_element(By.CSS_SELECTOR, ".practice-form-wrapper")
         assert "Student Registration Form" in wrapper.text
-        self.driver.execute_script("$('footer').remove()")
-        self.driver.execute_script("$('#fixedban').remove()")
+        self.driver.execute_script("document.querySelectorAll('footer').forEach(el => el.remove())")
+        self.driver.execute_script("document.getElementById('fixedban')?.remove()")
 
     @allure.step("Fill first name field with {first_name}")
     def fill_first_name(self, first_name):
